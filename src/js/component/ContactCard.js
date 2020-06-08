@@ -3,8 +3,9 @@ import RigoPhoto from "../../img/rigo-baby.jpg";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/home.scss";
+import PropTypes from "prop-types";
 
-export const ContactCard = () => {
+export const ContactCard = props => {
 	const { store, actions } = useContext(Context);
 	return (
 		<div>
@@ -62,4 +63,13 @@ export const ContactCard = () => {
 				})}
 		</div>
 	);
+};
+
+ContactCard.propTypes = {
+	history: PropTypes.object,
+	deleteContact: PropTypes.func
+};
+
+ContactCard.defaultProps = {
+	deleteContact: null
 };
